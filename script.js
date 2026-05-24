@@ -205,19 +205,7 @@ function initApp() {
   const contactForm = document.getElementById('contactForm');
   if (contactForm) {
     contactForm.addEventListener('submit', function(e) {
-      e.preventDefault();
-      const name = document.getElementById('name').value.trim();
-      const email = document.getElementById('email').value.trim();
-      const msg = document.getElementById('message').value.trim();
-      if (!name || !email || !msg) return;
       updateDisplay('statEmails', incStat('vg_emails'));
-      const subject = encodeURIComponent('Portfolio Contact - ' + name);
-      const body = encodeURIComponent('Name: ' + name + '\nEmail: ' + email + '\n\nMessage:\n' + msg);
-      window.location.href = 'mailto:iamvijaygirange@gmail.com?subject=' + subject + '&body=' + body;
-      const btn = this.querySelector('.btn');
-      const orig = btn.textContent;
-      btn.textContent = '✓ Sent';
-      setTimeout(() => { this.reset(); btn.textContent = orig; }, 3000);
     });
   }
 
