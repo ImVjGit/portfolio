@@ -501,7 +501,7 @@ body{
   .about-metrics{justify-content:center}
   .skills-grid,.projects-grid{grid-template-columns:1fr}
   .contact-grid{grid-template-columns:1fr}
-  .nav-links{display:none}
+  .nav-links{flex-wrap:wrap;justify-content:flex-end}
   .nav{padding:16px 20px}
   .hero{padding:100px 20px 60px}
   .section{padding:60px 0}
