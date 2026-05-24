@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vijay Girange — Java Developer</title>
+<meta name="description" content="Vijay Girange — Java Developer | Spring Boot · Microservices · AWS">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css?v=2">
+</head>
+<body>
+  <canvas id="bgCanvas" aria-hidden="true"></canvas>
+  <div class="boot-overlay" id="bootOverlay">
+  <div class="boot-terminal">
+    <div class="boot-title">Vijay Girange</div>
+    <div class="boot-subtitle">Java Developer · Building Scalable Backend Systems</div>
+    <div class="boot-progress"><div class="boot-progress-bar" id="bootProgressBar"><div class="boot-progress-glow"></div></div></div>
+    <div class="boot-logs" id="bootLogs"></div>
+  </div>
+</div>
+<div class="cursor-glow" id="cursorGlow"></div>
+<div class="grid-bg"></div>
+
+<nav class="nav" id="nav">
+  <div class="nav-path"><span class="nav-coffee">☕</span> <span>~</span>/vijay-girange</div>
+  <div class="nav-links" id="navLinks">
+    <a href="#about" class="nav-link active" style="--nav-delay:0s">About</a>
+    <a href="#skills" class="nav-link" style="--nav-delay:0.3s">Skills</a>
+    <a href="#experience" class="nav-link" style="--nav-delay:0.6s">Exp</a>
+    <a href="#projects" class="nav-link" style="--nav-delay:0.9s">Work</a>
+    <a href="#contact" class="nav-link" style="--nav-delay:1.2s">Contact</a>
+    <a href="#rag" class="nav-link nav-chat" style="--nav-delay:1.5s">💬 Chat</a>
+  </div>
+</nav>
+
+<section class="hero" id="hero">
+  <div class="spring-leaf" aria-hidden="true">
+    <svg viewBox="0 0 120 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M60 0 C85 20 108 50 105 80 C102 110 80 140 50 155 C25 140 10 110 12 85 C14 60 30 25 60 0Z"
+        fill="currentColor" opacity="0.25" />
+      <path d="M60 0 C70 35 75 60 70 90 C65 115 55 130 50 155"
+        stroke="currentColor" stroke-width="1.5" opacity="0.35" fill="none" />
+      <path d="M60 0 Q75 40 70 80 Q60 110 50 155"
+        stroke="currentColor" stroke-width="0.8" opacity="0.3" fill="none" />
+    </svg>
+  </div>
+  <h1 class="hero-name scatter-text" id="scatterName">Vijay Girange</h1>
+  <div class="hero-role">
+    <div class="hr-line hr-title title-group"><div class="java-cup"><div class="cup-steam s1"></div><div class="cup-steam s2"></div><div class="cup-steam s3"></div><div class="cup-body"><div class="cup-handle"></div></div></div>Java Developer</div>
+    <div class="hr-line hr-stack">🍃 Spring Boot</div>
+    <div class="hr-line hr-location">📍 Pune · 45 Days Notice</div>
+  </div>
+  <p class="hero-desc">Java Developer specializing in Spring Boot, microservices, cloud-native architectures, and Spring AI.</p>
+  <div class="hero-cta">
+    <a href="#projects" class="btn btn-primary">View Work</a>
+    <a href="#contact" class="btn btn-ghost">Contact</a>
+    <button class="btn btn-resume" id="resumeBtn">📄 Resume</button>
+  </div>
+</section>
+
+<section class="section" id="about">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-leaf" data-section="about"></div>
+      <h2 class="section-title section-motion-float" id="aboutTitle">About</h2>
+    </div>
+    <div class="about-grid" id="aboutGrid">
+      <div class="about-image scatter-image" id="scatterProfile">
+        <img src="assets/profile.jpg?v=2" alt="Vijay Girange">
+      </div>
+      <div>
+        <p class="about-text reveal" id="aboutText">
+          <strong>Vijay Girange</strong> is a Java Developer with 4+ years of experience building enterprise-grade systems with Spring Boot, Microservices, and cloud-native architectures — with expertise in secure payment processing, scalable SaaS platforms, and third-party API integrations. A Spring AI practitioner, he bridges robust backend engineering with modern AI capabilities to ship high-impact, compliant software.
+        </p>
+        <div class="about-metrics reveal reveal-delay-1">
+          <div class="metric-item"><div class="metric-value" data-target="4">0</div><div class="metric-label">Years of Experience</div></div>
+          <div class="metric-item"><div class="metric-value" data-target="15">0</div><div class="metric-label">Projects Delivered</div></div>
+          <div class="metric-item"><div class="metric-value" data-target="100">0</div><div class="metric-label">% On-Time Delivery</div></div>
+        </div>
+        <div class="about-edu reveal reveal-delay-2">
+          <div class="edu-row"><span class="edu-label">🎓 Education</span><span class="edu-value">BE Computer Science — Savitribai Phule Pune University</span></div>
+          <div class="edu-row"><span class="edu-label">📜 Certifications</span><span class="edu-value">GitHub Copilot · Spring GenAI for Java Developers</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="rag">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-leaf" data-section="rag"></div>
+      <h2 class="section-title section-motion-pulse">Ask</h2>
+    </div>
+    <p class="rag-desc reveal" style="margin-bottom:24px">Quick answers about my experience, skills, and projects. Fully private, runs in your browser.</p>
+    <div class="rag-pipeline" id="ragPipeline" role="status" aria-live="polite">
+      <span class="pipe-stage" data-stage="question">Question</span>
+      <span class="pipe-arrow">→</span>
+      <span class="pipe-stage" data-stage="archive">Archive</span>
+      <span class="pipe-arrow">→</span>
+      <span class="pipe-stage" data-stage="scanner">Scan</span>
+      <span class="pipe-arrow">→</span>
+      <span class="pipe-stage" data-stage="processor">Process</span>
+      <span class="pipe-arrow">→</span>
+      <span class="pipe-stage" data-stage="done">Answer</span>
+    </div>
+    <div class="rag-chat">
+      <div class="rag-chat-messages" id="ragMessages" role="log" aria-live="polite">
+        <div class="rag-msg rag-msg-system"><div class="rag-msg-content">Chat with Vijay AI Assistant</div></div>
+      </div>
+      <div class="rag-chat-input-row">
+        <input type="text" class="rag-input" id="ragInput" placeholder="e.g. Ask about skills or experience..." autocomplete="off">
+        <button class="rag-send" id="ragSend">⏎</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="skills">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-leaf" data-section="skills"></div>
+      <h2 class="section-title section-motion-bounce">Skills</h2>
+    </div>
+    <div class="skills-grid">
+      <div class="skill-card reveal">
+        <div class="skill-card-title">Languages</div>
+        <div class="skill-item"><div class="skill-header"><span class="skill-name">Java</span><span class="skill-level expert">Expert</span></div><div class="skill-bar"><div class="skill-bar-fill" data-pct="95"></div></div></div>
+        <div class="skill-item"><div class="skill-header"><span class="skill-name">SQL</span><span class="skill-level advanced">Advanced</span></div><div class="skill-bar"><div class="skill-bar-fill" data-pct="85"></div></div></div>
+        <div class="skill-item"><div class="skill-header"><span class="skill-name">JavaScript/TypeScript</span><span class="skill-level proficient">Proficient</span></div><div class="skill-bar"><div class="skill-bar-fill" data-pct="60"></div></div></div>
+      </div>
+      <div class="skill-card reveal reveal-delay-1">
+        <div class="skill-card-title">Spring Ecosystem</div>
+        <div class="skill-item"><div class="skill-header"><span class="skill-name">Spring Boot</span><span class="skill-level expert">Expert</span></div><div class="skill-bar"><div class="skill-bar-fill" data-pct="95"></div></div></div>
+        <div class="skill-item"><div class="skill-header"><span class="skill-name">Spring MVC / Security</span><span class="skill-level expert">Expert</span></div><div class="skill-bar"><div class="skill-bar-fill" data-pct="90"></div></div></div>
+        <div class="skill-item"><div class="skill-header"><span class="skill-name">Spring AI</span><span class="skill-level advanced">Advanced</span></div><div class="skill-bar"><div class="skill-bar-fill" data-pct="75"></div></div></div>
+        <div class="skill-item"><div class="skill-header"><span class="skill-name">Hibernate / JPA</span><span class="skill-level expert">Expert</span></div><div class="skill-bar"><div class="skill-bar-fill" data-pct="90"></div></div></div>
+        <div class="skill-item"><div class="skill-header"><span class="skill-name">REST APIs / Microservices</span><span class="skill-level expert">Expert</span></div><div class="skill-bar"><div class="skill-bar-fill" data-pct="90"></div></div></div>
+      </div>
+      <div class="skill-card reveal reveal-delay-2">
+        <div class="skill-card-title">Cloud / Database</div>
+        <div class="skill-item"><div class="skill-header"><span class="skill-name">AWS (S3, SQS, DynamoDB)</span><span class="skill-level advanced">Advanced</span></div><div class="skill-bar"><div class="skill-bar-fill" data-pct="80"></div></div></div>
+        <div class="skill-item"><div class="skill-header"><span class="skill-name">MySQL</span><span class="skill-level advanced">Advanced</span></div><div class="skill-bar"><div class="skill-bar-fill" data-pct="85"></div></div></div>
+        <div class="skill-item"><div class="skill-header"><span class="skill-name">Query Optimization</span><span class="skill-level advanced">Advanced</span></div><div class="skill-bar"><div class="skill-bar-fill" data-pct="80"></div></div></div>
+      </div>
+      <div class="skill-card reveal">
+        <div class="skill-card-title">DevOps & Tools</div>
+        <div class="skill-item"><div class="skill-header"><span class="skill-name">Docker</span><span class="skill-level advanced">Advanced</span></div><div class="skill-bar"><div class="skill-bar-fill" data-pct="85"></div></div></div>
+        <div class="skill-item"><div class="skill-header"><span class="skill-name">Kafka</span><span class="skill-level proficient">Proficient</span></div><div class="skill-bar"><div class="skill-bar-fill" data-pct="75"></div></div></div>
+        <div class="skill-item"><div class="skill-header"><span class="skill-name">Git / Bitbucket</span><span class="skill-level expert">Expert</span></div><div class="skill-bar"><div class="skill-bar-fill" data-pct="90"></div></div></div>
+        <div class="skill-item"><div class="skill-header"><span class="skill-name">SonarQube / CI/CD</span><span class="skill-level advanced">Advanced</span></div><div class="skill-bar"><div class="skill-bar-fill" data-pct="80"></div></div></div>
+      </div>
+      <div class="skill-card reveal reveal-delay-1">
+        <div class="skill-card-title">Security & Compliance</div>
+        <div class="skill-item"><div class="skill-header"><span class="skill-name">Encryption (AES/Digital Signature)</span><span class="skill-level advanced">Advanced</span></div><div class="skill-bar"><div class="skill-bar-fill" data-pct="85"></div></div></div>
+        <div class="skill-item"><div class="skill-header"><span class="skill-name">RBAC / Third-Party API</span><span class="skill-level advanced">Advanced</span></div><div class="skill-bar"><div class="skill-bar-fill" data-pct="85"></div></div></div>
+      </div>
+      <div class="skill-card reveal reveal-delay-2">
+        <div class="skill-card-title">AI / GenAI</div>
+        <div class="skill-item"><div class="skill-header"><span class="skill-name">Spring AI / LLM Integration</span><span class="skill-level advanced">Advanced</span></div><div class="skill-bar"><div class="skill-bar-fill" data-pct="75"></div></div></div>
+        <div class="skill-item"><div class="skill-header"><span class="skill-name">RAG Pipelines</span><span class="skill-level proficient">Proficient</span></div><div class="skill-bar"><div class="skill-bar-fill" data-pct="70"></div></div></div>
+        <div class="skill-item"><div class="skill-header"><span class="skill-name">OpenAI / Gemini / Ollama</span><span class="skill-level proficient">Proficient</span></div><div class="skill-bar"><div class="skill-bar-fill" data-pct="70"></div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="experience">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-leaf" data-section="experience"></div>
+      <h2 class="section-title section-motion-spin">Experience</h2>
+    </div>
+    <div class="timeline">
+      <div class="timeline-item reveal">
+        <div class="timeline-date">Nov 2023 — Present</div>
+        <div class="timeline-role">Java Developer</div>
+        <div class="timeline-company">Artcode Private Limited · Pune</div>
+        <ul class="timeline-desc">
+          <li>Engineered payment integration modules — RESTful APIs for secure financial transaction processing</li>
+          <li>Architected high-volume transaction pipelines handling 100% data integrity across financial operations</li>
+          <li>Built payment processing engines with AES encryption, digital signing, and signature verification for financial compliance</li>
+          <li>Optimized Spring Boot microservices improving system efficiency by 40% and reducing API response times by 50%</li>
+          <li>Directed end-to-end SaaS development, reducing time-to-market by 25% and enhancing security by 30% via RBAC</li>
+          <li>Mentored 5+ junior developers, reducing onboarding time by 40%</li>
+        </ul>
+      </div>
+      <div class="timeline-item reveal reveal-delay-1">
+        <div class="timeline-date">May 2022 — Oct 2023</div>
+        <div class="timeline-role">Java Developer</div>
+        <div class="timeline-company">Maxgen Technologies Pvt. Ltd. · Pune</div>
+        <ul class="timeline-desc">
+          <li>Engineered scalable web applications using Spring Boot and Hibernate, reducing system latency by 35%</li>
+          <li>Resolved 150+ production issues achieving 99.8% application uptime</li>
+          <li>Automated CI/CD pipelines reducing manual deployment efforts by 50%</li>
+          <li>Integrated third-party APIs reducing system failures by 25% and improved code efficiency by 30%</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="projects">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-leaf" data-section="projects"></div>
+      <h2 class="section-title section-motion-sway">Projects</h2>
+    </div>
+    <div class="projects-grid">
+      <div class="project-card reveal">
+        <div class="project-tags"><span class="project-tag">Spring Boot</span><span class="project-tag">NPCI</span><span class="project-tag">REST</span></div>
+        <div class="project-title">Fintech Mandate & Payment Platform</div>
+        <div class="project-desc">NPCI eMandate integration with RESTful APIs, debit mandate file processing, and XML/TXT credit processing. AES encryption, digital signing, 100% NPCI compliance.</div>
+      </div>
+      <div class="project-card reveal reveal-delay-1">
+        <div class="project-tags"><span class="project-tag">Spring Boot</span><span class="project-tag">Microservices</span><span class="project-tag">AWS</span></div>
+        <div class="project-title">School Management SaaS</div>
+        <div class="project-desc">Cloud-based microservices architecture improving system efficiency by 45%. Manages admissions, attendance, exams, and communications for multiple schools.</div>
+      </div>
+      <div class="project-card reveal reveal-delay-2">
+        <div class="project-tags"><span class="project-tag">Spring Boot</span><span class="project-tag">RBAC</span><span class="project-tag">SaaS</span></div>
+        <div class="project-title">HRMS Payroll Automation</div>
+        <div class="project-desc">Multi-tenant HRMS with payroll automation module reducing processing time by 50%. Role-based access, employee management, and attendance tracking.</div>
+      </div>
+      <div class="project-card reveal">
+        <div class="project-tags"><span class="project-tag">Spring Boot</span><span class="project-tag">Mobile</span><span class="project-tag">Web</span></div>
+        <div class="project-title">Society Management Platform</div>
+        <div class="project-desc">Responsive mobile and web platform using Spring Boot. Improved user adoption rates by 35% with real-time updates and intuitive interfaces.</div>
+      </div>
+      <div class="project-card reveal reveal-delay-1">
+        <div class="project-tags"><span class="project-tag">Microservice</span><span class="project-tag">Integration</span><span class="project-tag">Moodle</span></div>
+        <div class="project-title">TFG-MoodleCloud Integration</div>
+        <div class="project-desc">Microservice integration enhancing data accessibility across systems. Reduced data retrieval time by 40% through seamless system-to-system communication.</div>
+      </div>
+      <div class="project-card reveal reveal-delay-2">
+        <div class="project-tags"><span class="project-tag">Spring AI</span><span class="project-tag">RAG</span><span class="project-tag">LLM</span></div>
+        <div class="project-title">Spring GenAI for Java</div>
+        <div class="project-desc">AI-powered backend with Spring Boot + Spring AI. Integrates OpenAI, Gemini, Ollama. Implements RAG pipelines, prompt engineering, and context-aware AI systems.</div>
+        <a href="https://github.com/ImVjGit" class="project-link" target="_blank" rel="noopener">View on GitHub →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="contact">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-leaf" data-section="contact"></div>
+      <h2 class="section-title section-motion-glow">Contact</h2>
+    </div>
+    <div class="contact-grid">
+      <div>
+        <div class="contact-item reveal">
+          <div class="contact-label"><span class="contact-icon">✉</span> Email</div>
+          <span class="contact-value copy-val" data-copy="iamvijaygirange@gmail.com">iamvijaygirange@gmail.com</span>
+        </div>
+        <div class="contact-item reveal reveal-delay-1">
+          <div class="contact-label"><span class="contact-icon">📞</span> Phone</div>
+          <span class="contact-value contact-hidden">Available on request</span>
+        </div>
+        <div class="contact-item reveal reveal-delay-2">
+          <div class="contact-label"><span class="contact-icon">⟨⟩</span> GitHub</div>
+          <a href="https://github.com/ImVjGit" target="_blank" rel="noopener" class="contact-value contact-link">→ GitHub</a>
+        </div>
+        <div class="contact-item reveal reveal-delay-3">
+          <div class="contact-label"><span class="contact-icon">🔗</span> LinkedIn</div>
+          <a href="https://linkedin.com/in/vijay-girange-a11890240" target="_blank" rel="noopener" class="contact-value contact-link">→ LinkedIn</a>
+        </div>
+      </div>
+      <div class="contact-form reveal reveal-delay-1">
+        <form id="contactForm">
+          <div class="form-group"><label class="form-label">Name</label><input type="text" class="form-input" id="name" required></div>
+          <div class="form-group"><label class="form-label">Email</label><input type="email" class="form-input" id="email" required></div>
+          <div class="form-group"><label class="form-label">Message</label><textarea class="form-textarea" id="message" required></textarea></div>
+          <button type="submit" class="btn btn-primary">Send</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="resume-overlay" id="resumeOverlay">
+  <div class="resume-modal" id="resumeModal">
+    <button class="resume-close" id="resumeClose">&times;</button>
+    <div class="resume-modal-icon">📄</div>
+    <div class="resume-modal-title">Gotcha! Here's my resume</div>
+    <div class="resume-modal-desc">How do you want it?</div>
+    <div class="resume-options">
+      <button class="resume-option" id="resumeDownload">
+        <span class="resume-option-icon">💾</span>
+        <span class="resume-option-label">Download directly</span>
+        <span class="resume-option-arrow">→</span>
+      </button>
+      <button class="resume-option" id="resumeEmailBtn">
+        <span class="resume-option-icon">📧</span>
+        <span class="resume-option-label">Email it to me</span>
+        <span class="resume-option-arrow">→</span>
+      </button>
+    </div>
+    <div class="resume-email-form" id="resumeEmailForm">
+      <input type="email" class="resume-email-input" id="resumeEmailInput" placeholder="your@email.com" autocomplete="email">
+      <button class="btn btn-primary" id="resumeEmailSend">Send</button>
+    </div>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="footer-stats" id="footerStats">
+    <div class="footer-stat"><span class="stat-icon">👀</span><span class="stat-num" id="statVisits">0</span><span class="stat-label">Visits</span></div>
+    <div class="footer-stat"><span class="stat-icon">📄</span><span class="stat-num" id="statResumes">0</span><span class="stat-label">Resumes Downloaded</span></div>
+    <div class="footer-stat"><span class="stat-icon">✉️</span><span class="stat-num" id="statEmails">0</span><span class="stat-label">Emails Sent</span></div>
+  </div>
+  <div class="footer-text">© 2026 Vijay Girange <span class="footer-toggle" id="statsToggle">📊</span></div>
+</footer>
+
+<script src="bg-anim.js?v=2"></script>
+<script src="scatter.js?v=2"></script>
+<script src="rag-worker.js?v=2"></script>
+<script src="script.js?v=2"></script>
+</body>
+</html>
