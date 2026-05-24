@@ -215,10 +215,10 @@ function initApp() {
         const res = await fetch(this.action, {
           method: 'POST',
           body: JSON.stringify(data),
-          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' }
+          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+          redirect: 'manual'
         });
-        const json = await res.json();
-        if (json.ok || res.ok) {
+        if (res.ok || res.type === 'opaqueredirect') {
           updateDisplay('statEmails', incStat('vg_emails'));
           btn.textContent = '✓ Sent!';
           this.reset();
@@ -369,5 +369,3 @@ class RAGChat {
     msgEl.appendChild(rows);
   }
 }
-
-document.addEventListener('DOMContentLoaded', boot);
