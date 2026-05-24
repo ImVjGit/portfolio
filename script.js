@@ -211,9 +211,14 @@ function initApp() {
       btn.textContent = 'Sending...';
       btn.disabled = true;
       try {
-        const data = new FormData(this);
-        const res = await fetch(this.action, { method: 'POST', body: data, headers: { 'Accept': 'application/json' } });
-        if (res.ok) {
+        const data = { name: this.querySelector('[name="name"]').value, email: this.querySelector('[name="email"]').value, message: this.querySelector('[name="message"]').value };
+        const res = await fetch(this.action, {
+          method: 'POST',
+          body: JSON.stringify(data),
+          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' }
+        });
+        const json = await res.json();
+        if (json.ok || res.ok) {
           updateDisplay('statEmails', incStat('vg_emails'));
           btn.textContent = '✓ Sent!';
           this.reset();
