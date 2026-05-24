@@ -204,8 +204,28 @@ function initApp() {
   /* Emails sent (contact form) */
   const contactForm = document.getElementById('contactForm');
   if (contactForm) {
-    contactForm.addEventListener('submit', function(e) {
-      updateDisplay('statEmails', incStat('vg_emails'));
+    contactForm.addEventListener('submit', async function(e) {
+      e.preventDefault();
+      const btn = this.querySelector('.btn');
+      const orig = btn.textContent;
+      btn.textContent = 'Sending...';
+      btn.disabled = true;
+      try {
+        const data = new FormData(this);
+        const res = await fetch(this.action, { method: 'POST', body: data, headers: { 'Accept': 'application/json' } });
+        if (res.ok) {
+          updateDisplay('statEmails', incStat('vg_emails'));
+          btn.textContent = '✓ Sent!';
+          this.reset();
+          setTimeout(() => { btn.textContent = orig; btn.disabled = false; }, 3000);
+        } else {
+          btn.textContent = '✗ Failed';
+          setTimeout(() => { btn.textContent = orig; btn.disabled = false; }, 2000);
+        }
+      } catch {
+        btn.textContent = '✗ Failed';
+        setTimeout(() => { btn.textContent = orig; btn.disabled = false; }, 2000);
+      }
     });
   }
 
