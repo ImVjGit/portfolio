@@ -5,6 +5,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const overlay = document.getElementById('bootOverlay');
   if (overlay) overlay.remove();
   initApp();
+  const resumeBtn = document.getElementById('resumeBtn');
+  if (resumeBtn) resumeBtn.style.display = '';
 });
 function initApp() {
   /* Cursor Glow */
