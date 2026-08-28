@@ -5,8 +5,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const overlay = document.getElementById('bootOverlay');
   if (overlay) overlay.remove();
   initApp();
-  const resumeBtn = document.getElementById('resumeBtn');
-  if (resumeBtn) resumeBtn.style.display = '';
 });
 function initApp() {
   /* Cursor Glow */
@@ -27,16 +25,6 @@ function initApp() {
   new Scatter(document.getElementById('scatterName'), {
     ...scatterOpts, color: '#f0f0f0', hoverColor: '#f97316'
   });
-
-  const profileEl = document.getElementById('scatterProfile');
-  if (profileEl) {
-    new Scatter(profileEl, {
-      type: 'image', src: 'assets/profile.jpg?v=2',
-      gap: isMobile ? 5 : 3, dotSize: isMobile ? 2 : 3,
-      radius: isMobile ? 0 : 60, hoverColor: '#f97316',
-      hoverOnly: true
-    });
-  }
 
   /* Background animation */
   if (!isMobile) new BgAnim();
@@ -105,68 +93,6 @@ function initApp() {
   /* RAG */
   new RAGChat();
 
-  /* Resume Modal */
-  const resumeBtn = document.getElementById('resumeBtn');
-  const overlay = document.getElementById('resumeOverlay');
-  const modal = document.getElementById('resumeModal');
-  const closeBtn = document.getElementById('resumeClose');
-  const downloadBtn = document.getElementById('resumeDownload');
-  const emailBtn = document.getElementById('resumeEmailBtn');
-  const emailForm = document.getElementById('resumeEmailForm');
-  const emailInput = document.getElementById('resumeEmailInput');
-  const emailSend = document.getElementById('resumeEmailSend');
-  const resumePath = 'resume.pdf';
-
-  function openResumeModal() {
-    overlay.classList.add('show');
-    emailForm.classList.remove('show');
-    emailInput.value = '';
-  }
-  function closeResumeModal() {
-    overlay.classList.remove('show');
-  }
-
-  resumeBtn.addEventListener('click', openResumeModal);
-  closeBtn.addEventListener('click', closeResumeModal);
-  overlay.addEventListener('click', e => {
-    if (e.target === overlay) closeResumeModal();
-  });
-  document.addEventListener('keydown', e => {
-    if (e.key === 'Escape') closeResumeModal();
-  });
-
-  downloadBtn.addEventListener('click', () => {
-    const a = document.createElement('a');
-    a.href = resumePath;
-    a.download = 'Vijay_Girange_Resume.pdf';
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
-    closeResumeModal();
-  });
-
-  emailBtn.addEventListener('click', () => {
-    emailForm.classList.toggle('show');
-    if (emailForm.classList.contains('show')) emailInput.focus();
-  });
-
-  emailSend.addEventListener('click', () => {
-    const email = emailInput.value.trim();
-    if (!email || !email.includes('@')) {
-      emailInput.style.borderColor = '#ef4444';
-      return;
-    }
-    emailInput.style.borderColor = '';
-    const a = document.createElement('a');
-    a.href = 'mailto:' + email + '?subject=Resume%20-%20Vijay%20Girange&body=Hi%20Vijay%2C%0A%0AI%20would%20like%20your%20resume.%20Please%20attach%20it.%0A%0AThanks';
-    a.click();
-    closeResumeModal();
-  });
-
-  emailInput.addEventListener('keydown', e => {
-    if (e.key === 'Enter') emailSend.click();
-  });
-
   /* ─── Stats Tracking ─── */
   function getStat(key) { return parseInt(localStorage.getItem(key)) || 0 }
   function setStat(key, val) { localStorage.setItem(key, val); return val }
@@ -185,21 +111,12 @@ function initApp() {
     /* Init counts silently */
     function refreshStats() {
       updateDisplay('statVisits', getStat('vg_visits_' + new Date().toDateString()));
-      updateDisplay('statResumes', getStat('vg_resumes'));
       updateDisplay('statEmails', getStat('vg_emails'));
     }
     refreshStats();
     toggleBtn.addEventListener('click', () => {
       statsEl.classList.toggle('show');
       refreshStats();
-    });
-  }
-
-  /* Resume downloads — track & stat */
-  const dlBtn = document.getElementById('resumeDownload');
-  if (dlBtn) {
-    dlBtn.addEventListener('click', () => {
-      updateDisplay('statResumes', incStat('vg_resumes'));
     });
   }
 
